@@ -11,4 +11,37 @@ package model;
  */
 public class Horario {
     
+    public String dia;
+    public String horarioInicio;
+    public String tiempoFinal;
+
+    public Horario(String dia, String horarioInicio, String tiempoFinal) {
+        this.dia = dia;
+        this.horarioInicio = horarioInicio;
+        this.tiempoFinal = tiempoFinal;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+    public String getHorarioInicio() {
+        return horarioInicio;
+    }
+
+    public void setHorarioInicio(String horarioInicio) {
+        this.horarioInicio = horarioInicio;
+    }
+
+    public String getTiempoFinal() {
+        return tiempoFinal;
+    }
+
+    public void setTiempoFinal(String tiempoFinal) {
+        this.tiempoFinal = tiempoFinal;
+    }
 }
