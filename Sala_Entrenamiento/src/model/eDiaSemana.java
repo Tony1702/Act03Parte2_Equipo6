@@ -7,14 +7,8 @@ package model;
 
 /**
  *
- * @author
+ * @author josue
  */
 public enum eDiaSemana {
-    DOMINGO,
-    LUNES,
-    MARTES,
-    MIERCOLES,
-    JUEVES,
-    VIERNES,
-    SABADO
+    Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo
 }

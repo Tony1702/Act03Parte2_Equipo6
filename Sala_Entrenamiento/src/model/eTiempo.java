@@ -7,9 +7,8 @@ package model;
 
 /**
  *
- * @author
+ * @author josue
  */
 public enum eTiempo {
-    AM,
-    PM
+    AM, PM
 }
