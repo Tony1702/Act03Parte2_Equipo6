@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.Date;
+
 /**
  *
  * @author Tony1
@@ -13,16 +15,30 @@ public class Persona {
     
     protected String id;
     protected String nombre;
+    protected String apellido;
     protected String celular;
     protected String correo;
     protected Date fechaNacimiento;
     
-    public Persona(String pId, String pNombre, String pCelular, String pCorreo, Date pFechaNacimiento) {
-        id = pId;
-        nombre = pNombre;
-        celular = pCelular;
-        correo = pCorreo;
-        fechaNacimiento = pFechaNacimiento;        
+    public Persona() {
+        
+    }
+    
+    public Persona(String id, String nombre, String apellido, String celular, String correo, Date fechaNacimiento) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.celular = celular;
+        this.correo = correo;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getId() {

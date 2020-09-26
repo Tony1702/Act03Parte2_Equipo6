@@ -15,8 +15,13 @@ public class Cliente extends Persona{
     private eEstadoCliente estado;
     private Date fechaMatri;
     private Date fechaUltiPago;
-
-    public Cliente(eEstadoCliente estado, Date fechaMatri, Date fechaUltiPago) {
+    
+    public Cliente() {
+        super();
+    }
+    
+    public Cliente(String id, String nombre, String apellido, String celular, String correo, Date fechaNacimiento, eEstadoCliente estado, Date fechaMatri, Date fechaUltiPago) {        
+        super(id, nombre, apellido, celular, correo, fechaNacimiento);
         this.estado = estado;
         this.fechaMatri = fechaMatri;
         this.fechaUltiPago = fechaUltiPago;
@@ -45,6 +50,4 @@ public class Cliente extends Persona{
     public void setFechaUltiPago(Date fechaUltiPago) {
         this.fechaUltiPago = fechaUltiPago;
     }
-    
-    
 }
