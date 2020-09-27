@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.Collection;
+
 /**
  *
  * @author
@@ -15,13 +17,16 @@ public class Sala {
     private int capacidad;
     private float mensualidad;
     private int aforo;
+    private Collection<Horario> horario;
 
-    public Sala(String id, String nombre, int capacidad, float mensualidad, int aforo) {
+    public Sala(String id, String nombre, int capacidad, float mensualidad, 
+            int aforo, Collection<Horario> horario) {
         this.id = id;
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.mensualidad = mensualidad;
         this.aforo = aforo;
+        this.horario = horario;
     }
 
     public String getId() {
@@ -34,6 +39,14 @@ public class Sala {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public Collection<Horario> getHorario() {
+        return horario;
+    }
+
+    public void setHorario(Collection<Horario> horario) {
+        this.horario = horario;
     }
 
     public void setNombre(String nombre) {
@@ -62,6 +75,5 @@ public class Sala {
 
     public void setAforo(int aforo) {
         this.aforo = aforo;
-    }
-    
+    }    
 }

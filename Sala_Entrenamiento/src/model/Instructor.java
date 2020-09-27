@@ -20,7 +20,9 @@ public class Instructor extends Persona{
         super();
     }
     
-    public Instructor(String id, String nombre, String apellido, String celular, String correo, Date fechaNacimiento, boolean temporal, Collection<Servicio> servicios) {        
+    public Instructor(String id, String nombre, String apellido, String celular, 
+            String correo, Date fechaNacimiento, boolean temporal, 
+            Collection<Servicio> servicios) {        
         super(id, nombre, apellido, celular, correo, fechaNacimiento);
         this.temporal = temporal;
         this.servicios = servicios;
@@ -42,4 +44,8 @@ public class Instructor extends Persona{
         this.servicios = servicios;
     }
     
+    @Override
+    public String toString(){
+        return id+" "+nombre+" "+apellido+'\n'+celular+" "+correo;
+    }
 }

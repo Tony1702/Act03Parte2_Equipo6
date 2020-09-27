@@ -11,8 +11,8 @@ package model;
  */
 public class Servicio {
 
-    public String codigo;
-    public String descripcion;
+    private String codigo;
+    private String descripcion;
 
     public Servicio(String codigo, String descripcion) {
         this.codigo = codigo;
@@ -33,5 +33,10 @@ public class Servicio {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    
+    @Override
+    public String toString(){
+        return codigo + " " + descripcion;
     }
 }

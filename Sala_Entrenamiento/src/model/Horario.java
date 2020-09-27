@@ -11,37 +11,63 @@ package model;
  */
 public class Horario {
     
-    public String dia;
-    public String horarioInicio;
-    public String tiempoFinal;
+    private eDiaSemana dia;
+    private String horaInicio;
+    private eTiempo tiempoInicio;
+    private String horaFinal;
+    private eTiempo tiempoFinal;
 
-    public Horario(String dia, String horarioInicio, String tiempoFinal) {
+    public Horario(eDiaSemana dia, String horaInicio, eTiempo tiempoInicio, String horaFinal, eTiempo tiempoFinal) {
         this.dia = dia;
-        this.horarioInicio = horarioInicio;
+        this.horaInicio = horaInicio;
+        this.tiempoInicio = tiempoInicio;
+        this.horaFinal = horaFinal;
         this.tiempoFinal = tiempoFinal;
     }
 
-    public String getDia() {
+    public eDiaSemana getDia() {
         return dia;
     }
 
-    public void setDia(String dia) {
+    public void setDia(eDiaSemana dia) {
         this.dia = dia;
     }
 
-    public String getHorarioInicio() {
-        return horarioInicio;
+    public String getHoraInicio() {
+        return horaInicio;
     }
 
-    public void setHorarioInicio(String horarioInicio) {
-        this.horarioInicio = horarioInicio;
+    public void setHoraInicio(String horaInicio) {
+        this.horaInicio = horaInicio;
     }
 
-    public String getTiempoFinal() {
+    public eTiempo getTiempoInicio() {
+        return tiempoInicio;
+    }
+
+    public void setTiempoInicio(eTiempo tiempoInicio) {
+        this.tiempoInicio = tiempoInicio;
+    }
+
+    public String getHoraFinal() {
+        return horaFinal;
+    }
+
+    public void setHoraFinal(String horaFinal) {
+        this.horaFinal = horaFinal;
+    }
+
+    public eTiempo getTiempoFinal() {
         return tiempoFinal;
     }
 
-    public void setTiempoFinal(String tiempoFinal) {
+    public void setTiempoFinal(eTiempo tiempoFinal) {
         this.tiempoFinal = tiempoFinal;
     }
+
+    @Override
+    public String toString() {
+        return dia +": "+ horaInicio +" "+ tiempoInicio +" - "+ 
+                horaFinal + " " + tiempoFinal;
+    }  
 }

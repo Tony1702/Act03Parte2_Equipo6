@@ -20,7 +20,9 @@ public class Cliente extends Persona{
         super();
     }
     
-    public Cliente(String id, String nombre, String apellido, String celular, String correo, Date fechaNacimiento, eEstadoCliente estado, Date fechaMatri, Date fechaUltiPago) {        
+    public Cliente(String id, String nombre, String apellido, String celular, 
+            String correo, Date fechaNacimiento, eEstadoCliente estado, 
+            Date fechaMatri, Date fechaUltiPago) {                
         super(id, nombre, apellido, celular, correo, fechaNacimiento);
         this.estado = estado;
         this.fechaMatri = fechaMatri;
@@ -50,4 +52,9 @@ public class Cliente extends Persona{
     public void setFechaUltiPago(Date fechaUltiPago) {
         this.fechaUltiPago = fechaUltiPago;
     }
+
+    @Override
+    public String toString() {
+        return id+" "+nombre+" "+apellido+'\n'+celular+" "+correo+" "+estado;
+    }    
 }

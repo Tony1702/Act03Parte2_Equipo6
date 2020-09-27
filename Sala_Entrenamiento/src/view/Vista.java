@@ -5,10 +5,17 @@
  */
 package view;
 
+import controller.Controlador;
+
 /**
  *
  * @author Tony1
  */
 public class Vista {
+    private Controlador controlador = new Controlador();
+    
+    public Controlador getControlador(){
+        return controlador;
+    }
     
 }

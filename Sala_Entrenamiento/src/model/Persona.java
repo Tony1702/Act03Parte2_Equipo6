@@ -20,11 +20,10 @@ public class Persona {
     protected String correo;
     protected Date fechaNacimiento;
     
-    public Persona() {
-        
-    }
+    public Persona(){}
     
-    public Persona(String id, String nombre, String apellido, String celular, String correo, Date fechaNacimiento) {
+    public Persona(String id, String nombre, String apellido, String celular, 
+            String correo, Date fechaNacimiento) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -79,6 +78,5 @@ public class Persona {
 
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
-    }
-    
+    }    
 }

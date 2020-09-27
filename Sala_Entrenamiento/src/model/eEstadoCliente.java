@@ -10,5 +10,5 @@ package model;
  * @author josue
  */
 public enum eEstadoCliente {
-    Moroso, Activo, Inactivo
+    MOROSO, ACTIVO, INACTIVO
 }

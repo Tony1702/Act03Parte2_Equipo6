@@ -12,6 +12,8 @@ import java.util.Collection;
  * @author Tony1
  */
 public class Clase {
+    private String idClase;
+    private Sala sala;
     private Instructor intructor;
     private Servicio servicio;
     private int aforoClase;
@@ -25,12 +27,15 @@ public class Clase {
      * @param aforoClase
      * @param horario 
      */
-    public Clase(Instructor intructor, Servicio servicio, int aforoClase, Horario horario) {
+    public Clase(String idClase, Sala sala, Instructor intructor, 
+            Servicio servicio, int aforoClase, Horario horario) {            
+        this.idClase = idClase;
+        this.sala = sala;
         this.intructor = intructor;
         this.servicio = servicio;
         this.aforoClase = aforoClase;
-        this.asistencia = new ArrayList<Cliente>();
         this.horario = horario;
+        this.asistencia = new ArrayList();        
     }
 
     /**
@@ -51,6 +56,22 @@ public class Clase {
 
     public int getAforoClase() {
         return aforoClase;
+    }
+
+    public String getIdClase() {
+        return idClase;
+    }
+
+    public void setIdClase(String idClase) {
+        this.idClase = idClase;
+    }
+
+    public Sala getSala() {
+        return sala;
+    }
+
+    public void setSala(Sala sala) {
+        this.sala = sala;
     }
 
     /**
@@ -92,8 +113,11 @@ public class Clase {
     public void setHorario(Horario horario) {
         this.horario = horario;
     }
-    
-    
-    
-    
+
+    @Override
+    public String toString() {        
+        return idClase +" "+ sala.getNombre() +" "+ intructor.getNombre() +" "+ 
+                intructor.getApellido()+'\n'+ servicio.getDescripcion() +" "+ 
+                horario.toString() + '\n' + asistencia.size() +"/"+ aforoClase;
+    }    
 }
