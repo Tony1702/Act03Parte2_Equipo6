@@ -11,7 +11,7 @@ public class Singleton {
     // Instancia a la propia clase
     private static Singleton instance;        
     //ventana del manual de ayuda
-    static JFrame ventanaAyuda = new JFrame("Manual de ayuda");
+    private static JFrame ventanaAyuda = new JFrame("Manual de ayuda");
     
     // constructor privado para que nadie pueda hacer "new"
     private Singleton(){}
