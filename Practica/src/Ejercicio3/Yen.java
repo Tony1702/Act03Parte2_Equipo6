@@ -9,6 +9,15 @@ package Ejercicio3;
  *
  * @author Tony1
  */
-public class Yen {
-    
+public class Yen implements Convertidor {
+    public Yen() {
+    }
+
+    // --------------------------
+
+    @Override
+    public void mostrarMoneda(int valor) {
+        double yen = valor * 0.17;
+        System.out.println("Se reciben " + valor + " colones y se devuelven " + yen + " yenes");
+    }
 }

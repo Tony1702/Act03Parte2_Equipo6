@@ -9,6 +9,21 @@ package Ejercicio3;
  *
  * @author Tony1
  */
-public class TipoMoneda {
-    
+public class TipoMoneda extends Colon {
+    public TipoMoneda( Convertidor convertidor, int valor )
+    {
+        this.setImplementador( convertidor );
+        this.setValor( valor );
+    }
+
+    // ------------------------
+
+    @Override
+    public void obtener()
+    {
+        System.out.println("           ----------------------------------------------");
+        System.out.println("                Haciendo la conversion de moneda...");
+
+        this.getImplementador().mostrarMoneda(this.getValor());
+    }
 }

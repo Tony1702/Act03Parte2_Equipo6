@@ -9,6 +9,15 @@ package Ejercicio3;
  *
  * @author Tony1
  */
-public class Euro {
-    
+public class Euro implements Convertidor {
+    public Euro() {
+    }
+
+    // --------------------------
+
+    @Override
+    public void mostrarMoneda(int valor) {
+        double euro = valor * 0.0014;
+        System.out.println("Se reciben " + valor + " colones y se devuelven " + euro + " euros");
+    }
 }
