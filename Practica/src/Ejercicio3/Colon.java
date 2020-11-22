@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Problema8;
+package Ejercicio3;
 
 /**
  *
  * @author Tony1
  */
-public interface Arma {
-    public String usarArma(); 
+public class Colon {
+    
 }
