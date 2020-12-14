@@ -13,6 +13,22 @@ public class Persona {
         this.genero = genero;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
     @Override
     public String toString() {
         return id + " " + nombre + " " + apellido + " " + genero;

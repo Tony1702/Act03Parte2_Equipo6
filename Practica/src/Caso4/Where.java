@@ -1,19 +1,20 @@
 package Caso4;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 public class Where implements IExpression {
 
-    private Predicate<String> filter;
+    private String colCondicion;
+    private String condicion;
 
-    public Where(Predicate<String> filter) {
-        this.filter = filter;
+    public Where(String colCondicion, String condicion) {
+        this.colCondicion = colCondicion;
+        this.condicion = condicion;
     }
 
     @Override
-    public List<String> interpret(Context ctx) {
-        ctx.setFilter(filter);
-        return ctx.search();
+    public List<String> interpret(Context contexto) {
+        contexto.setCondicion(colCondicion,condicion);
+        return contexto.buscar();
     }
 }
