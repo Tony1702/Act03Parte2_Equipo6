@@ -1,27 +1,27 @@
-package interpreter.examples.sql;
+package Caso4;
 
 import java.util.List;
 
-public class From implements Expression {
+public class From implements IExpression {
 
-    private String table;
+    private String tabla;
     private Where where;
 
-    From(String table) {
-        this.table = table;
+    public From(String tabla) {
+        this.tabla = tabla;
     }
 
-    From(String table, Where where) {
-        this.table = table;
+    public From(String tabla, Where where) {
+        this.tabla = tabla;
         this.where = where;
     }
 
     @Override
-    public List<String> interpret(Context ctx) {
-        ctx.setTable(table);
+    public List<String> interpret(Context contexto) {
+        contexto.setTable(tabla);
         if (where == null) {
-            return ctx.search();
+            return contexto.search();
         }
-        return where.interpret(ctx);
+        return where.interpret(contexto);
     }
 }

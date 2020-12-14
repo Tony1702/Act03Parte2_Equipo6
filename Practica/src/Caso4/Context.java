@@ -1,6 +1,5 @@
-package interpreter.examples.sql;
+package Caso4;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -12,19 +11,9 @@ import java.util.stream.Stream;
 
 public class Context {
 	
-	private static Map<String, List<Row>> tables = new HashMap<>();
-
-    static {
-        List<Row> list = new ArrayList<>();
-        list.add(new Row("John", "Doe"));
-        list.add(new Row("Jan", "Kowalski"));
-        list.add(new Row("Dominic", "Doom"));
-
-        tables.put("people", list);
-    }
-
-    private String table;
-    private String column;
+    private static Map<String, List<Persona>> tablas = new HashMap<>();
+    private String tabla;
+    private String columna;
 
     /**
      * Index of column to be shown in result.
@@ -44,13 +33,13 @@ public class Context {
     private Predicate<String> whereFilter = matchAnyString;
     private Function<String, Stream<? extends String>> columnMapper = matchAllColumns;
 
-    void setColumn(String column) {
-        this.column = column;
+    void setColumn(String columna) {
+        this.columna = columna;
         setColumnMapper();
     }
 
-    void setTable(String table) {
-        this.table = table;
+    void setTable(String tabla) {
+        this.tabla = tabla;
     }
 
     void setFilter(Predicate<String> filter) {
@@ -62,7 +51,7 @@ public class Context {
      * No filters, match all columns.
      */
     void clear() {
-        column = "";
+        columna = "";
         columnMapper = matchAllColumns;
         whereFilter = matchAnyString;
     }
@@ -71,7 +60,7 @@ public class Context {
 
         List<String> result = tables.entrySet()
                 .stream()
-                .filter(entry -> entry.getKey().equalsIgnoreCase(table))
+                .filter(entry -> entry.getKey().equalsIgnoreCase(tabla))
                 .flatMap(entry -> Stream.of(entry.getValue()))
                 .flatMap(Collection::stream)
                 .map(Row::toString)
@@ -85,19 +74,25 @@ public class Context {
     }
 
     /**
-     * Sets column mapper based on {@link #column} attribute.
+     * Sets column mapper based on {@link #columna} attribute.
      * Note: If column is unknown, will remain to look for all columns.
      */
     private void setColumnMapper() {
-        switch (column) {
+        switch (columna) {
             case "*":
                 colIndex = -1;
                 break;
-            case "name":
+            case "id":
                 colIndex = 0;
                 break;
-            case "surname":
+            case "nombre":
                 colIndex = 1;
+                break;
+            case "apellido":
+                colIndex = 2;
+                break;
+            case "genero":
+                colIndex = 3;
                 break;
         }
         if (colIndex != -1) {

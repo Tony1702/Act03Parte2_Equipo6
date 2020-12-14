@@ -1,21 +1,21 @@
-package interpreter.examples.sql;
+package Caso4;
 
 import java.util.List;
 
-public class Select implements Expression {
+public class Select implements IExpression {
 
-    private String column;
+    private String columna;
     private From from;
 
-    Select(String column, From from) {
-        this.column = column;
+    public Select(String columna, From from) {
+        this.columna = columna;
         this.from = from;
     }
 
     @Override
-    public List<String> interpret(Context ctx) {
-        ctx.setColumn(column);
-        return from.interpret(ctx);
+    public List<String> interpret(Context contexto) {
+        contexto.setColumn(columna);
+        return from.interpret(contexto);
     }
 
 }
