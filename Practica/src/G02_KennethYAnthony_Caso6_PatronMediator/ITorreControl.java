@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Problema8;
+package G02_KennethYAnthony_Caso6_PatronMediator;
 
 /**
  *
  * @author Tony1
  */
-public interface Arma {
-    public String usarArma(); 
+public interface ITorreControl {
+    void despegar(Avion avion);
+    void aterrizar(Avion avion);
 }
