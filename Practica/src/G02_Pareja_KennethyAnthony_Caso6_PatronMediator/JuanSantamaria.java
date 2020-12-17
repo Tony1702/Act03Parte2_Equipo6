@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package G02_KennethYAnthony_Caso6_PatronMediator;
+package G02_Pareja_KennethyAnthony_Caso6_PatronMediator;
 
 import java.util.ArrayList;
 
